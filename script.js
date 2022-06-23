@@ -1,35 +1,58 @@
 let myLibrary = ["Bible","Musashi","Zen"];
 
-function Book() {
+
+// Define the book constructor // 
+
+function Book(title, author, pages, read ) {
+
+    this.title = title
+    this.author = author
+    this.pages = pages
+    this.read = read
 
 }
+
+// Add book to the array //
 
 function addBookToLibrary(book) {
 
-    myLibrary.push(this.book)
+    myLibrary.push(book);
 
 
 }
-
-
-let deleteButton = document.createElement("button") 
-
-
-
-
-
 
 
 
 
 pageBooks = document.getElementById('booksLisuto')
 
-for (let i = 0; i < myLibrary.length; i++) {
 
-    let bookHead = document.createElement("h3");
-    let bookz = document.createTextNode(myLibrary[i]);
-    bookHead.appendChild(bookz)
+// Update the book list and add new books cards //
 
-    pageBooks.appendChild(bookHead)
-    
+function bookLoop() {
+
+    for (let i = 0; i < myLibrary.length; i++) {
+
+        // Create book card container //
+        let bookCard = document.createElement("div");
+        bookCard.classList.add("cardContainer");
+        bookCard.setAttribute('id',`bookCard${i}`);
+        
+        // Create book card heading //
+
+        let titleHead = document.createElement("p");
+        let title = document.createTextNode(myLibrary[i]);
+        titleHead.appendChild(title);
+        bookCard.appendChild(titleHead);
+
+        // Create  book card author //
+
+        let authorTitle = document.createElement("p");
+        authorTitle.classList("authorTitle");
+        authorTitle.setAttribute('id',`title${}`)
+
+    }
+
+
+
 }
