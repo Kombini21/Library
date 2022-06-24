@@ -125,6 +125,7 @@ function bookAddPageLoop() {
             readYesNo.setAttribute('id', myLibrary[i].read);
             readYesNo.appendChild(yesNo);
 
+            
             // add elements to the page //
 
 
