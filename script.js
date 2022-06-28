@@ -61,9 +61,25 @@ function userCreateBook() {
         bookAddPageLoop();
     }
 
-    }
+}
 
+
+// Function to delete the card //
+
+
+function deletarCarta(x) {
     
+    let idBook = x.dataset.deleteid;
+    let element = document.getElementById(idBook);
+    let titles = element.getElementsByTagName('p');
+
+    let tituloLivro = titles[0].id
+
+    var removeIndex = myLibrary.map(item => item.title).indexOf(tituloLivro);
+    ~removeIndex && myLibrary.splice(removeIndex, 1);
+    element.remove(); 
+    
+}
 
 
 
@@ -125,6 +141,16 @@ function bookAddPageLoop() {
             readYesNo.setAttribute('id', myLibrary[i].read);
             readYesNo.appendChild(yesNo);
 
+            // Create delete button //
+            
+            let deleteButton = document.createElement("button");
+            deleteButton.setAttribute('class','botaoDelete')
+            deleteButton.setAttribute('onclick','deletarCarta(this)')
+            deleteButton.setAttribute('id',`button${i}` )
+            deleteButton.setAttribute('data-deleteId',`bookCard${i}` )
+            deleteButton.innerHTML = "Delete Me";
+
+
             
             // add elements to the page //
 
@@ -132,6 +158,7 @@ function bookAddPageLoop() {
             bookCard.appendChild(authorTitle)
             bookCard.appendChild(bookPages)
             bookCard.appendChild(readYesNo)
+            bookCard.appendChild(deleteButton)
             bookListo.appendChild(bookCard)
         }
     }
