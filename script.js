@@ -47,19 +47,31 @@ function createNewBookInfo(title,author,pages,read) {
 // Create new book user input //
 
 function userCreateBook() {
+    
+    let t1 = document.getElementById('bTitle').checkValidity();
+    let t2 = document.getElementById('bAuthor').checkValidity();
+    let t3 = document.getElementById('bPages').checkValidity();
+    let t4 = document.getElementById('bRead').checkValidity();
 
-    let bookNome = document.getElementById("bTitle").value;
-    let bookAutor = document.getElementById("bAuthor").value;
-    let bookPaginas = document.getElementById("bPages").value;
-    let bookRead = document.getElementById("bRead").value;
+    if (!t1 || !t2 || !t3 || !t4) {
 
-    let teste = createNewBookInfo(bookNome,bookAutor,bookPaginas,bookRead);
-
-    if (teste == 1) {
-        console.log("book's already on the list.")
-    }else {
-        bookAddPageLoop();
+        console.log("Preencha tudo!!")
     }
+    else{   
+
+        let bookNome = document.getElementById("bTitle").value;
+        let bookAutor = document.getElementById("bAuthor").value;
+        let bookPaginas = document.getElementById("bPages").value;
+        let bookRead = document.getElementById("bRead").value;
+
+        let teste = createNewBookInfo(bookNome,bookAutor,bookPaginas,bookRead);
+
+        if (teste == 1) {
+            console.log("book's already on the list.")
+        }else {
+            bookAddPageLoop();
+        }
+    }   
 
 }
 

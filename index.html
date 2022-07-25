@@ -30,13 +30,13 @@
         <form class="userBookInfo">
 
             <label for="bTitle"> Book Title:</label>
-            <input type="text" id="bTitle" name="bTitle">
+            <input type="text" id="bTitle" name="bTitle" required>
 
             <label for="bAuthor"> Author:</label>
-            <input type="text" id="bAuthor" name="bAuthor">
+            <input type="text" id="bAuthor" name="bAuthor" required>
 
             <label for="bPages"> Pages:</label>
-            <input type="number" min="0" oninput="validity.valid||(value='');" id="bPages" name="bPages">
+            <input type="number" min="0" oninput="validity.valid||(value='');" id="bPages" name="bPages" required>
 
             <label for="bRead"> Read:</label>
             <select id="bRead" name="Bread">
